@@ -41,6 +41,8 @@
     "devDatabaseType": "mongodb",
     "prodDatabaseType": "mongodb",
     "clientPackageManager": "npm",
-    "languages": ["en", "fr"]
+    "languages": ["en", "fr"],
+    "lastLiquibaseTimestamp": 1617062247000,
+    "entities": ["Courses", "Professor"]
   }
 }
