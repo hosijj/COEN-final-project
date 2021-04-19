@@ -1,0 +1,36 @@
+{
+  "fields": [
+    {
+      "fieldName": "rate",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "desc",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "professor",
+      "otherEntityName": "professor",
+      "relationshipType": "many-to-many",
+      "otherEntityField": "lastName",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "review"
+    },
+    {
+      "relationshipName": "courses",
+      "otherEntityName": "courses",
+      "relationshipType": "many-to-many",
+      "otherEntityField": "name",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "review"
+    }
+  ],
+  "service": "no",
+  "readOnly": false,
+  "pagination": "infinite-scroll",
+  "name": "Review",
+  "changelogDate": "20210419223137"
+}

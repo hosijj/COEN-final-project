@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="review">
+      <h2 data-cy="reviewDetailsHeading"><span>Review</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ review.id }}</span>
+        </dd>
+        <dt><span>Rate</span></dt>
+        <dd>
+          <span>{{ review.rate }}</span>
+        </dd>
+        <dt><span>Desc</span></dt>
+        <dd>
+          <span>{{ review.desc }}</span>
+        </dd>
+        <dt><span>Professor</span></dt>
+        <dd>
+          <span *ngFor="let professor of review.professors; let last = last">
+            <a [routerLink]="['/professor', professor?.id, 'view']">{{ professor.lastName }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+        <dt><span>Courses</span></dt>
+        <dd>
+          <span *ngFor="let courses of review.courses; let last = last">
+            <a [routerLink]="['/courses', courses?.id, 'view']">{{ courses.name }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/review', review.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
