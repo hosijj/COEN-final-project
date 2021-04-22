@@ -1,12 +1,13 @@
+
 <div>
   <h2 id="page-heading" data-cy="ReviewHeading">
-    <span>Reviews</span>
+    <!--<span>Reviews</span>-->
 
     <div class="d-flex justify-content-end">
-      <button class="btn btn-info mr-2" (click)="reset()" [disabled]="isLoading">
+     <!-- <button class="btn btn-info mr-2" (click)="reset()" [disabled]="isLoading">
         <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
         <span>Refresh List</span>
-      </button>
+      </button>-->
 
       <button
         id="jh-create-entity"
@@ -19,7 +20,33 @@
       </button>
     </div>
   </h2>
+  <div class="col-12 row">
+  <div style="display: block;" class="col-6">
+    <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins"
+            [colors]="pieChartColors"
+            [legend]="pieChartLegend">
+    </canvas>
+    <span>Professors</span>
 
+  </div>
+  <div style="display: block;" class="col-6">
+    <canvas baseChart
+            [data]="pieChartDataCrs"
+            [labels]="pieChartLabelsCrs"
+            [chartType]="pieChartType"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins"
+            [colors]="pieChartColors"
+            [legend]="pieChartLegend">
+    </canvas>
+    <span>Course</span>
+  </div>
+  </div>
   <jhi-alert-error></jhi-alert-error>
 
   <jhi-alert></jhi-alert>
@@ -28,7 +55,7 @@
     <span>No reviews found</span>
   </div>
 
-  <div class="table-responsive" id="entities" *ngIf="reviews && reviews.length > 0">
+  <!--<div class="table-responsive" id="entities" *ngIf="reviews && reviews.length > 0">
     <table class="table table-striped" aria-describedby="page-heading">
       <thead>
         <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
@@ -68,5 +95,5 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </div>-->
 </div>

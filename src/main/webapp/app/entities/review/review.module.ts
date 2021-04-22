@@ -6,9 +6,10 @@ import { ReviewDetailComponent } from './detail/review-detail.component';
 import { ReviewUpdateComponent } from './update/review-update.component';
 import { ReviewDeleteDialogComponent } from './delete/review-delete-dialog.component';
 import { ReviewRoutingModule } from './route/review-routing.module';
+import {ChartsModule} from "ng2-charts";
 
 @NgModule({
-  imports: [SharedModule, ReviewRoutingModule],
+  imports: [SharedModule, ReviewRoutingModule, ChartsModule],
   declarations: [ReviewComponent, ReviewDetailComponent, ReviewUpdateComponent, ReviewDeleteDialogComponent],
   entryComponents: [ReviewDeleteDialogComponent],
 })
