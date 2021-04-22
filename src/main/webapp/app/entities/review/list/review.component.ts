@@ -31,7 +31,14 @@ export class ReviewComponent implements OnInit {
   public pieChartOptions: ChartOptions = {
     responsive: true,
       title: {
-        text: 'my title',
+        text: 'Professors',
+        display: true
+      }
+  };
+  public pieChartOptionsCrs: ChartOptions = {
+    responsive: true,
+      title: {
+        text: 'Courses',
         display: true
       }
   };
